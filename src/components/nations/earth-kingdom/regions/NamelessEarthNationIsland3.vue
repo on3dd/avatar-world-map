@@ -7,8 +7,12 @@
   </g>
 </template>
 
-<script>
-  export default {
-    name: 'NamelessEarthNationIsland3'
+<script lang="ts">
+  import {Component} from "vue-property-decorator";
+  import Region from "@/components/nations/region";
+
+  @Component
+  export default class NamelessEarthNationIsland3 extends Region {
+    protected name = 'NamelessEarthNationIsland3';
   };
 </script>

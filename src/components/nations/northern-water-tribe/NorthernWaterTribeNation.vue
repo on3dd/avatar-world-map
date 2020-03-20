@@ -10,10 +10,10 @@
 <script lang="ts">
   import {Component} from 'vue-property-decorator';
   import Nation from "@/components/nations/nation";
-  import NorthernTundra from "@/components/nations/northern-water-tribe/regions/NorthernTundra.vue";
-  import Outskirts from "@/components/nations/northern-water-tribe/regions/Outskirts.vue";
-  import SpiritOasis from "@/components/nations/northern-water-tribe/regions/SpiritOasis.vue";
-  import NorthernWaterTribe from "@/components/nations/northern-water-tribe/regions/NorthernWaterTribe.vue";
+  import NorthernTundra from "./regions/NorthernTundra.vue";
+  import Outskirts from "./regions/Outskirts.vue";
+  import SpiritOasis from "./regions/SpiritOasis.vue";
+  import NorthernWaterTribe from "./regions/NorthernWaterTribe.vue";
 
   @Component({
     components: {

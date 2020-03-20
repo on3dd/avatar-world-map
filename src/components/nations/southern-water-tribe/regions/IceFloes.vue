@@ -1,12 +1,9 @@
 <template>
-  <g>
+  <g @mousemove="mouseOver" @mouseleave="mouseLeave">
     <path
       d="m 2116.5153,2408.8344 6.2973,-23.8845 16.6583,-26.5144 67.3269,-35.1211 -11.6607,-29.4295 -0.4165,-13.6042 1.9435,-13.1878 12.3548,-22.3497 -18.324,-15.5477 -15.1312,-14.0207 -88.011,38.1751 12.6325,20.2675 4.8587,11.1055 v 11.3831 l -8.1903,9.9949 -12.3549,9.995 -17.9075,10.689 -13.1878,5.1363 -9.5785,-0.9717 -14.2983,-8.468 -13.3266,-10.4114 -40.4454,-4.7327 19.8282,30.4295 17.4724,10.6012 2.5522,9.227 2.5521,3.9264 0.9816,14.7239 -4.1227,5.4969 -11.1902,6.8712 -24.3435,-2.1595 -7.0675,11.7791 27.092,6.4786 21.3988,8.8343 29.4478,1.1779 18.6503,-14.9202 z"
       id="ice-floes"
-      inkscape:connector-curvature="0">
-      <title
-        id="title878">Ice Floes</title>
-    </path>
+      inkscape:connector-curvature="0"/>
     <path
       d="m 2138.9156,2154.7888 -39.4245,20.6839 -3.6092,33.8717 15.5476,-7.2185 11.1055,1.3882 23.1827,14.9924 16.1029,-14.9924 18.0465,-8.8844 -9.8562,-16.3806 -12.0772,-11.9384 z"
       id="path880"
@@ -18,9 +15,13 @@
   </g>
 </template>
 
-<script>
-  export default {
-    name: 'IceFloes'
+<script lang="ts">
+  import {Component} from "vue-property-decorator";
+  import Region from "@/components/nations/region";
+
+  @Component
+  export default class IceFloes extends Region {
+    protected name = 'Ice Floes';
   };
 </script>
 
