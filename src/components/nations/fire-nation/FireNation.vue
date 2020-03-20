@@ -1,6 +1,5 @@
 <template>
   <g class="nation fire-nation">
-    <PatolaMountains/>
     <BlackCliffs/>
     <YonRhasVillage/>
     <CrescentIsland/>
@@ -19,8 +18,8 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import PatolaMountains from "./regions/PatolaMountains.vue";
+  import {Component} from 'vue-property-decorator';
+  import Nation from "@/components/nations/nation";
   import FireNationCapital from "./regions/FireNationCapital.vue";
   import HotSpringCove from "./regions/HotSpringCove.vue";
   import RokusIsland from "./regions/RokusIsland.vue";
@@ -38,7 +37,6 @@
 
   @Component({
     components: {
-      PatolaMountains,
       BlackCliffs,
       YonRhasVillage,
       CrescentIsland,
@@ -55,9 +53,10 @@
       FireNationCapital,
     }
   })
-  export default class FireNation extends Vue {};
+  export default class FireNation extends Nation {};
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  @import "../../../scss/nation";
+  @include nation
 </style>

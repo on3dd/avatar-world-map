@@ -25,7 +25,8 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from "vue-property-decorator";
+  import {Component} from "vue-property-decorator";
+  import Nation from "@/components/nations/nation";
   import KolauMountains from "./regions/KolauMountains.vue";
   import CrystalCatacombs from "./regions/CrystalCatacombs.vue";
   import SerpentsPass from "./regions/SerpentsPass.vue";
@@ -73,9 +74,10 @@
       BaSingSe,
     }
   })
-  export default class EarthKingdomNation extends Vue {};
+  export default class EarthKingdomNation extends Nation {};
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  @import "../../../scss/nation";
+  @include nation
 </style>

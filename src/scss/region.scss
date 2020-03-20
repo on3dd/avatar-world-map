@@ -1,16 +1,23 @@
-@mixin region {
+@mixin region($color) {
   g {
     cursor: pointer;
     pointer-events: all;
     /*transition: all .1s ease-out;*/
 
     > path {
-      fill: rgba(0, 0, 0, .1) !important;
+      fill: $color !important;
+      stroke: #000000;
+      stroke-width: 5.6692915;
+      stroke-linecap: butt;
+      stroke-linejoin: bevel;
+      stroke-miterlimit: 4;
+      stroke-dasharray: none;
+      stroke-opacity: 1
     }
 
     &:hover {
       > path {
-        fill: rgba(0, 0, 0, .2) !important;
+        fill: darken($color, 10%) !important;
       }
     }
   }

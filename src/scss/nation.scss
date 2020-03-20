@@ -1,0 +1,30 @@
+@import "./region";
+@import "./colors";
+
+@mixin nation {
+  .nation {
+    &.air-nomads {
+      @include region($color: $air-nomads);
+    }
+
+    &.earth-kingdom {
+      @include region($color: $earth-kingdom);
+    }
+
+    &.fire-nation {
+      @include region($color: $fire-nation);
+    }
+
+    &.northern-water-tribe {
+      @include region($color: $northern-water-tribe);
+    }
+
+    &.southern-water-tribe {
+      @include region($color: $southern-water-tribe);
+    }
+
+    &.united-republic-of-nations {
+      @include region($color: $united-republic-of-nations);
+    }
+  }
+}

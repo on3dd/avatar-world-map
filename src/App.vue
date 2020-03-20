@@ -26,6 +26,7 @@
     margin: 0;
     width: 100vw;
     height: 100vh;
+    background: darken(#2980b9, 25%);
   }
 
   #app {

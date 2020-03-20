@@ -8,7 +8,8 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
+  import {Component} from 'vue-property-decorator';
+  import Nation from "@/components/nations/nation";
   import TheShipwreck from "./regions/TheShipwreck.vue";
   import SouthernTundra from "./regions/SouthernTundra.vue";
   import IceFloes from "./regions/IceFloes.vue";
@@ -22,9 +23,10 @@
       IceFloes
     }
   })
-  export default class SouthernWaterTribeNation extends Vue {};
+  export default class SouthernWaterTribeNation extends Nation {};
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  @import "../../../scss/nation";
+  @include nation
 </style>
