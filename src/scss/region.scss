@@ -2,22 +2,25 @@
   g {
     cursor: pointer;
     pointer-events: all;
-    /*transition: all .1s ease-out;*/
+
+    $stroke-width: 6;
 
     > path {
       fill: $color !important;
       stroke: #000000;
-      stroke-width: 5.6692915;
+      stroke-width: $stroke-width;
       stroke-linecap: butt;
       stroke-linejoin: bevel;
       stroke-miterlimit: 4;
       stroke-dasharray: none;
-      stroke-opacity: 1
+      stroke-opacity: 1;
+      transition: all .1s ease-out;
     }
 
     &:hover {
       > path {
         fill: darken($color, 10%) !important;
+        stroke-width: $stroke-width * 1.75;
       }
     }
   }
