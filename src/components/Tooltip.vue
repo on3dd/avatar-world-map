@@ -25,7 +25,7 @@
     } {
       return {
         left: this.x - this.offsetWidth() + 'px',
-        top: this.y + 20 + 'px',
+        top: this.y + 25 + 'px',
         visibility: this.computeVisibility(),
       }
     }

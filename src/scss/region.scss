@@ -2,11 +2,10 @@
   g {
     cursor: pointer;
     pointer-events: all;
-
     $stroke-width: 6;
 
-    > .land {
-      fill: $color !important;
+    .land {
+      fill: $color;
       stroke: #000000;
       stroke-width: $stroke-width;
       stroke-linecap: butt;
@@ -15,12 +14,17 @@
       stroke-dasharray: none;
       stroke-opacity: 1;
       transition: all .1s ease-out;
+
+      &.active {
+        fill: darken($color, 15%) !important;
+        //stroke-width: $stroke-width * 1.5;
+      }
     }
 
     &:hover {
       > .land {
-        fill: darken($color, 10%) !important;
-        stroke-width: $stroke-width * 1.75;
+        fill: darken($color, 10%);
+        stroke-width: $stroke-width * 1.5;
       }
     }
   }
