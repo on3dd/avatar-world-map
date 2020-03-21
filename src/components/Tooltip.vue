@@ -21,19 +21,23 @@
     get bindStyles(): {
       left: string;
       top: string;
-      display: string;
+      visibility: string;
     } {
-      // console.log(this.$body.offsetHeight, this.y + this.offsetHeight());
       return {
         left: this.x - this.offsetWidth() + 'px',
         top: this.y + 20 + 'px',
-        display: this.title ? 'block' : 'none',
+        visibility: this.computeVisibility(),
       }
     }
 
     offsetWidth(): number {
       if (!this.$refs.tooltip) return 0;
       return this.$refs.tooltip.offsetWidth / 2;
+    }
+
+    computeVisibility(): string {
+      if ((this.title.length === 0) || (this.offsetWidth() === 8)) return 'hidden';
+      return 'visible';
     }
   }
 </script>

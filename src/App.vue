@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Map/>
-    <Tooltip :options="{}"/>
+    <Tooltip/>
   </div>
 </template>
 
