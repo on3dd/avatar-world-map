@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <Map/>
-    <Tooltip/>
+    <MapComponent/>
+    <TooltipComponent/>
+    <DetailsComponent/>
   </div>
 </template>
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
-  import Map from './components/Map.vue';
-  import Tooltip from './components/Tooltip.vue';
+  import MapComponent from './components/MapComponent.vue';
+  import TooltipComponent from './components/TooltipComponent.vue';
+  import DetailsComponent from './components/DetailsComponent.vue';
 
   @Component({
     components: {
-      Map,
-      Tooltip,
+      MapComponent,
+      TooltipComponent,
+      DetailsComponent,
     },
   })
   export default class App extends Vue {}
