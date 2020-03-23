@@ -42,6 +42,7 @@
     left: 0;
     margin: 2rem 3rem;
     width: 40%;
+    max-width: 600px;
     height: calc(100% - 4rem);
 
     .details {

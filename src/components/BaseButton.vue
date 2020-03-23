@@ -15,14 +15,11 @@
   .base-button--wrapper {
     display: block;
     margin: .5rem;
-
-    a {
-      display: block;
-      text-decoration: none;
-    }
   }
 
   .button {
+    display: block;
+    text-decoration: none;
     padding: 1rem 2rem;
     background: none;
     border: 2px solid transparent;
