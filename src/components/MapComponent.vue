@@ -38,7 +38,7 @@
       EarthKingdomNation,
     }
   })
-  export default class Map extends Vue {
+  export default class MapComponent extends Vue {
     private map!: HTMLElement & SVGGraphicsElement;
     private parent!: HTMLElement & SVGGraphicsElement;
     private viewBoxDefault = "0 0 3840 2560";

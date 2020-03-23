@@ -9,7 +9,7 @@
   import {Getter} from "vuex-class";
 
   @Component
-  export default class Tooltip extends Vue {
+  export default class TooltipComponent extends Vue {
     @Getter x!: number;
     @Getter y!: number;
     @Getter title!: string;
