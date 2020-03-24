@@ -3,17 +3,46 @@ import {Mutation} from "vuex-class";
 
 @Component
 export default class Region extends Vue {
-  @Mutation update!: (
+  $refs!: {
+    group: HTMLElement & SVGGraphicsElement;
+  };
+
+  mounted() {
+    // FIXME: remove if expression after updating all components
+    if (this.$refs.group) {
+      this.$refs.group.addEventListener('click', this.mouseClickHandler);
+      this.$refs.group.addEventListener('mousemove', this.mouseMoveHandler);
+      this.$refs.group.addEventListener('mouseleave', this.mouseLeaveHandler);
+    }
+  }
+
+  @Mutation updateTooltip!: (
     {x, y, title}: { x: number; y: number; title: string }
   ) => void;
 
-  protected name = 'Default name';
+  @Mutation updateDetails!: (
+    {name, image, paragraphs, link}: { name: string; image: string; paragraphs: string[]; link: string }
+  ) => void;
 
-  mouseOver(evt: MouseEvent) {
-    this.update({x: evt.clientX, y: evt.clientY, title: this.name});
+  protected name = 'Default name';
+  protected image = 'https://images2.alphacoders.com/556/thumb-1920-556413.jpg';
+  protected paragraphs = ['First', 'Second', 'Third'];
+  protected link = 'https://avatar.fandom.com/wiki/Avatar_Wiki';
+
+  mouseMoveHandler(evt: MouseEvent) {
+    this.updateTooltip({x: evt.clientX, y: evt.clientY, title: this.name});
   }
 
-  mouseLeave(evt: MouseEvent) {
-    this.update({x: 0, y: 0, title: ''});
+  mouseLeaveHandler(evt: MouseEvent) {
+    this.updateTooltip({x: 0, y: 0, title: ''});
+  }
+
+  mouseClickHandler(evt: MouseEvent) {
+    this.updateDetails({
+      name: this.name,
+      image: this.image,
+      paragraphs: this.paragraphs,
+      link: this.link
+    })
   }
 }

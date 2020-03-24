@@ -1,19 +1,17 @@
 <template>
-  <div class="details-wrapper">
+  <div class="details-wrapper" ref="detailsWrapper" :style="{display: display}">
     <section class="details">
-      <h1 class="details--header">Very Long Title</h1>
+      <h1 class="details--header">{{ name }}</h1>
       <div class="details--image--wrapper">
-        <img src="https://images2.alphacoders.com/556/thumb-1920-556413.jpg" alt="" class="details--image">
+        <img :src="image" alt="" class="details--image">
         <div class="details--image--shadow"></div>
       </div>
       <div class="details--description">
-        <p class="details--description--item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo libero modi temporibus. Aperiam deleniti dolore earum eos est expedita facere harum illo, itaque, iusto numquam possimus repellendus tenetur vero vitae!</p>
-        <p class="details--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo libero modi temporibus. Aperiam deleniti dolore earum eos est expedita facere harum illo, itaque, iusto numquam possimus repellendus tenetur vero vitae!</p>
-        <p class="details--description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo libero modi temporibus. Aperiam deleniti dolore earum eos est expedita facere harum illo, itaque, iusto numquam possimus repellendus tenetur vero vitae!</p>
-      </div>
+        <p v-for="(paragraph, idx) in paragraphs" :key="idx" class="details--description--item">{{ paragraph }}</p>
+        </div>
       <div class="button-group">
         <BaseButton>
-          <a href="" class="button button--learn-more">Learn more on Avatar Wiki</a>
+          <a :href="link" class="button button--learn-more">Learn more on Avatar Wiki</a>
         </BaseButton>
         <BaseButton>
           <button class="button button--back">Back to world map</button>
@@ -25,6 +23,7 @@
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
+  import {Getter} from "vuex-class";
   import BaseButton from "./BaseButton.vue";
 
   @Component({
@@ -32,7 +31,20 @@
       BaseButton,
     }
   })
-  export default class DetailsComponent extends Vue {}
+  export default class DetailsComponent extends Vue {
+    @Getter name!: string;
+    @Getter image!: string;
+    @Getter paragraphs!: string[];
+    @Getter link!: string;
+
+    $refs!: {
+      detailsWrapper: HTMLDivElement;
+    };
+
+    get display(): string {
+      return this.name === '' ? 'none' : 'block';
+    }
+  }
 </script>
 
 <style scoped lang="scss">
@@ -41,11 +53,13 @@
     top: 0;
     left: 0;
     margin: 2rem 3rem;
-    width: 40%;
+    width: 30%;
     max-width: 600px;
     height: calc(100% - 4rem);
 
     .details {
+      display: flex;
+      flex-direction: column;
       padding: 2rem;
       height: 100%;
       border-radius: 30px;
@@ -95,7 +109,17 @@
         }
       }
 
+      &--description {
+        flex-grow: 1;
+        overflow: auto;
+
+        &--item {
+          text-align: center;
+        }
+      }
+
       .button-group {
+        /*align-self: flex-end;*/
         display: flex;
         flex-direction: column;
         align-items: center;

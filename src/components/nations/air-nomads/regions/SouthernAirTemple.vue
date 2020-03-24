@@ -1,5 +1,5 @@
 <template>
-  <g @mousemove="mouseOver" @mouseleave="mouseLeave">
+  <g ref="group">
     <path class="land"
       d="m 1405.9539,1870.3496 -9.1621,5.2751 -1.1105,7.2186 -27.7637,17.7688 -0.2776,9.162 5.5527,4.7198 15.27,5.5528 7.4962,6.108 7.4962,0.2776 3.6093,6.3857 0.5553,10.5502 6.6633,4.1645 12.4936,-4.9974 28.319,-16.9359 0.8329,-6.9409 11.6608,11.3831 h 4.1645 l 1.3882,-3.6093 17.4912,13.8819 19.1569,18.8793 5.5527,8.0515 10.2726,0.2776 0.2777,2.7764 -10.5503,0.2776 1.6659,2.2211 26.9308,34.427 10.2725,-0.8329 9.4397,-11.9384 -1.3882,-6.6633 15.5477,3.054 12.4936,-2.7764 24.4321,-16.3805 9.7173,-11.6608 -0.2776,-8.3291 -9.7173,-21.1004 v -18.8793 l -2.4988,-3.054 -6.108,4.4421 -1.3882,5.5528 -1.6658,-8.6068 -11.6607,-16.9358 -4.7199,3.3316 -1.1105,-10.8278 -8.8844,-19.157 -4.9975,-2.4987 -4.9974,-5.5527 -16.103,23.8767 1.6658,-14.9924 -23.3215,-29.4295 -4.1645,0.8329 -0.5553,19.7123 -10.2726,-1.3882 -11.6607,14.4371 0.8329,3.3316 5.2751,1.1106 -4.9975,2.4987 7.7739,15.8253 -1.3882,2.7764 -10.2726,-4.7198 v 3.8869 l 16.3806,11.9384 -0.8329,1.3882 c 0,0 -22.211,-15.8253 -23.3215,-15.8253 -1.1106,0 -3.887,-1.1106 -3.887,-1.1106 l -2.221,7.2186 -4.4422,-5.2751 -10.2726,7.7738 2.7764,-12.4937 -8.8844,-7.7738 -5.5528,0.2776 0.8329,-3.6092 -0.5552,-2.4988 -23.0439,-17.7687 -11.1055,0.5552 -8.6067,12.7713 6.3856,5.5528 -3.6093,2.4987 -3.6092,-5.2751 z"
       id="northern-air-temple"/>
@@ -28,5 +28,8 @@
   @Component
   export default class SouthernAirTemple extends Region {
     protected name = 'Southern Air Temple';
+    protected image = 'https://vignette.wikia.nocookie.net/avatar/images/2/23/Restored_Southern_Air_Temple.png/revision/latest?cb=20130916095007';
+    protected paragraphs = ['The Southern Air Temple, located in the remote Patola Mountain Range, is one of the four original Air Nomad temples and one of the two that exclusively housed male airbenders, the other being the Northern Air Temple. Although it used to accept pilgrims from other nations,[1] the temple was thought to be only accessible via flying bison during Aang\'s lifetime. In spite of this, the Fire Nation managed to wipe out the temple\'s population during the Air Nomad Genocide, abruptly ending millennia of use by monks and nuns.[2] Though it remained uninhabited for the duration of the Hundred Year War, the Southern Air Temple was restored to its former glory shortly after the conflict\'s end by the Air Acolytes, who remained to settle in the temple grounds to preserve Air Nomad culture through many of their observances.'];
+    protected link = 'https://avatar.fandom.com/wiki/Southern_Air_Temple';
   };
 </script>

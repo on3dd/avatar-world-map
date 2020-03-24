@@ -1,5 +1,5 @@
 <template>
-  <g @mousemove="mouseOver" @mouseleave="mouseLeave">
+  <g ref="group">
     <path class="land"
       d="m 1741.8947,1895.6146 -8.6068,-1.3882 -8.6067,16.6582 12.216,10.2726 4.9975,-6.108 v -4.7198 l 54.1392,16.1029 24.7097,-21.1004 22.2109,19.7122 14.1595,10.8279 3.054,10.5502 4.4422,1.9434 36.9257,-29.9848 6.1081,-8.0514 -9.1621,-17.2135 3.6093,-13.3266 5.5528,-8.0515 13.3265,4.7199 10.5502,-3.887 2.7764,-9.9949 9.4397,-7.4962 13.0489,-4.7198 14.4371,0.2776 21.9334,7.4962 23.3215,15.8253 5.8303,0.5553 -1.6658,-15.27 -5.5527,-21.9334 2.4987,-9.4396 -15.4088,-6.6633 0.2776,9.8561 -29.7072,-11.2443 -13.6042,4.9975 -14.8536,-7.9127 -23.1826,-43.3114 -6.8022,-0.9717 -7.0797,4.3034 v 6.8021 l -7.635,11.3831 -11.6608,-8.3291 -3.1928,6.108 -6.5408,-10.2131 -4.9337,0.2596 -7.7901,25.0583 -13.6327,6.4917 -10.7764,-2.4668 -24.7985,30.6411 h -21.6825 l -32.4589,31.55 -11.4255,0.6492 -4.1547,2.4668 z"
       id="patola-mountains"/>
@@ -19,5 +19,8 @@
   @Component
   export default class PatolaMountains extends Region {
     protected name = 'Patola Mountains';
+    protected image = 'https://vignette.wikia.nocookie.net/avatar/images/9/93/Patola_Mountains.png/revision/latest?cb=20140103175021';
+    protected paragraphs = ['The Patola Mountains are a mountain range located on an island in the South Sea, north of the South Pole. As a territory of the Air Nomads, the mountains are known for housing the Southern Air Temple, which is situated at the center of the range.[1]'];
+    protected link = 'https://avatar.fandom.com/wiki/Patola_Mountains';
   };
 </script>
